@@ -1,0 +1,21 @@
+@import "src/assets/styles/_variables.scss";
+
+.login-modal {
+    text-align: center;
+    width: 100%;
+    max-width: 20rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: $border-radius-default;
+    @media screen and (max-width: 480px) {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+.login-header {
+    font-size: 32pt;
+    font-weight: 100;
+    margin: 0;
+    margin-bottom: $margin-bottom-default;
+}
