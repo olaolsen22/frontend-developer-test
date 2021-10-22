@@ -1,0 +1,69 @@
+@import "./_variables.scss";
+
+// FONT STYLE
+.label-error-message {
+    color: red;
+    font-size: 8pt;
+}
+.label-generic-message {
+    font-size: 8pt;
+}
+
+// FORMATTING
+.form-spacer {
+    margin-bottom: $margin-bottom-default;
+}
+
+// BUTTONS
+.primary-button {
+    background-color: $primary-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 1rem;
+    border: 0;
+    border-radius: $border-radius-default;
+    margin: 0 auto;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba($primary-color, 80%);
+    }
+    &:disabled {
+        cursor: not-allowed;
+        background-color: rgba($primary-color, 40%);;
+    }
+}
+
+// INPUT FIELDS
+.input-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: $margin-bottom-default;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    .input-field-icon {
+        position: absolute;
+        top: calc(50% - 0.85rem);
+        left: .65rem;
+        font-size: 1.25rem;
+    }
+    input {
+        margin: 0;
+        font-size: 14pt;
+        padding: .75rem;
+        background-color: #eceff1;
+        border: 0;
+        border-radius: $border-radius-default;
+        &.has-icon {
+          padding-left: 2.5rem;
+        }
+        &:focus {
+            outline-color: $primary-color !important;
+        }
+        &:disabled {
+            background-color: rgba(#eceff1, 40%);;
+        }
+    }
+}
