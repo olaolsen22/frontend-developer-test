@@ -15,22 +15,50 @@
 }
 
 // BUTTONS
-.primary-button {
-    background-color: $primary-color;
+button {
     text-transform: uppercase;
     font-weight: bold;
-    color: #ffffff;
-    padding: 1rem;
     border: 0;
     border-radius: $border-radius-default;
-    margin: 0 auto;
-    &:hover {
-        cursor: pointer;
-        background-color: rgba($primary-color, 80%);
+    margin: 0 1rem;
+    &.primary-button {
+        background-color: $primary-color;
+        color: #ffffff;
+        padding: 1rem;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba($primary-color, 80%);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: rgba($primary-color, 40%);;
+        }
     }
-    &:disabled {
-        cursor: not-allowed;
-        background-color: rgba($primary-color, 40%);;
+    &.secondary-button {
+        background-color: $secondary-color;
+        color: #ffffff;
+        padding: 1rem;
+        &:hover {
+            cursor: pointer;
+            background-color: $secondary-color-faded;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: $secondary-color-faded;
+        }
+    }
+    &.white-button {
+        background-color: #ffffff;
+        color: black;
+        padding: 1rem;
+        &:hover {
+            cursor: pointer;
+            background-color: #dedede;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #dedede;
+        }
     }
 }
 
