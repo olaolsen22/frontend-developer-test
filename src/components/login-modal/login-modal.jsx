@@ -41,7 +41,7 @@ export const LoginModal = () => {
                     <div className="input-field-icon">
                         <FontAwesomeIcon icon={faEnvelope}/>
                     </div>
-                    <input className='has-icon' type='text' name="email" placeholder="Email Address" disabled={loading}/>
+                    <input className='has-icon' type='email' name="email" placeholder="Email Address" disabled={loading}/>
                 </div>
                 <div className="input-field">
                     <div className="input-field-icon">

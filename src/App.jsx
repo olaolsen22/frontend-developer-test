@@ -11,13 +11,13 @@ function App() {
   const history = useHistory()
   const requireAuth = () => {
     if (!getToken()) {
-      history.push('/')
+      history.replace('/')
     }
   }
   return (
     <div className="App">
       <Route exact path="/" component={LoginModal}/>
-      <Route exact path="/devices" component={Devices} onEnter={requireAuth()}/>
+      <Route exact path="/devices" component={Devices} beforeEnter={requireAuth()} />
     </div>
   );
 }

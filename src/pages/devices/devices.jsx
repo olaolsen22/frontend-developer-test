@@ -1,8 +1,11 @@
 import { useState, Component } from "react";
+import { getToken } from '../../utils/common';
+import axios from "axios";
 import './devices.scss'
 // COMPONENTS
 import { DisplayDevices } from '../../components/display-devices/display-devices'
-import axios from "axios";
+import { Footer } from '../../components/footer/footer'
+
 
 class Devices extends Component {
     constructor (props) {
@@ -12,8 +15,11 @@ class Devices extends Component {
         }
     }
     componentDidMount() {
-        this.getDevices();
-        setInterval(this.getDevices, 5000);
+        if (!getToken()) {
+        } else {
+            this.getDevices();
+            setInterval(this.getDevices, 5000);
+        }
     }
     getDevices = () => {
         axios.get('http://35.201.2.209:8000/devices').then(response => {
@@ -24,6 +30,7 @@ class Devices extends Component {
         return (
             <div className='devices-container'>
                 <DisplayDevices deviceList={this.state.deviceList}/>
+                <Footer/>
             </div>
         )
     }
