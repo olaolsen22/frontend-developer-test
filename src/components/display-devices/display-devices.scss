@@ -1,5 +1,6 @@
-$bubble-dimension: 5rem;
-$device-bubbles-dimension: 30rem;
+$bubble-dimension: 4rem;
+$device-bubbles-dimension: 20rem;
+$animation-rotate-origin: -200% 300%;
 
 .display-device-container {
     display: flex;
@@ -23,24 +24,33 @@ $device-bubbles-dimension: 30rem;
     text-transform: uppercase;
 }
 
+@keyframes example {
+    0% {
+        display: none;
+        transform: rotate(0deg);
+    }
+    5% {
+        display: block;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+
 .device-bubbles {
     position: absolute;
     width: $device-bubbles-dimension;
     height: $device-bubbles-dimension;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     .device-bubble {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: $bubble-dimension;
         height: $bubble-dimension;
         background-color: white;
         border-radius: 100%;
-        label {
-            color: black;
-            font-size: 18pt;
-            font-weight: bold;
-        }
         &:nth-child(1) {
             right: 0;
         }
@@ -52,11 +62,11 @@ $device-bubbles-dimension: 30rem;
         }
         &:nth-child(4) {
             bottom: calc(50% - 2.25rem);
-            left: 0;
+            left: -25%;
         }
         &:nth-child(5) {
             bottom: calc(50% - 2.25rem);
-            right: 0;
+            right: -25%;
         }
         &:nth-child(6) {
             bottom: 0;
@@ -64,25 +74,26 @@ $device-bubbles-dimension: 30rem;
         }
         &:nth-child(7) {
             left: calc(50% - 2.25rem);
+            top: -25%
         }
         &:nth-child(8) {
             left: calc(50% - 2.25rem);
-            bottom: 0;
+            bottom: -25%;
         }
         &:nth-child(9) {
             left: calc(50% - 2.25rem);
-            bottom: 125%;
+            bottom: 135%;
         }
         &:nth-child(10) {
-            left: 125%;
+            left: 135%;
             bottom: calc(50% - 2.25rem);
         }
         &:nth-child(11) {
             left: calc(50% - 2.25rem);
-            top: 125%;
+            top: 135%;
         }
         &:nth-child(12) {
-            right: 125%;
+            right: 135%;
             bottom: calc(50% - 2.25rem);
         }
 

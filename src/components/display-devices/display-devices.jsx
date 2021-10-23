@@ -5,7 +5,7 @@ export const DisplayDevices = (props) => {
         let deviceBubbles = []
         for (const device in props.deviceList) {
             deviceBubbles.push(
-                <div 
+                <div
                     className='device-bubble'
                     key={'device' + device}
                 />
