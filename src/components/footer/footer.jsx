@@ -10,7 +10,6 @@ export const Footer = () => {
         history.replace('/');
     }
     const notifyAPI = () => {
-        console.log('asdasdasd',  getToken())
         axios.post('http://35.201.2.209:8000/notify', {
             name: 'Ola T. Olsen',
             email: 'olaolsen22@gmail.com',
@@ -28,11 +27,9 @@ export const Footer = () => {
         })
     }
     return (
-        <div className='footer-container'>
-            <div>
-                <button className='white-button' onClick={notifyAPI}>Notify</button>
-                <button className='secondary-button' onClick={logoutUser}>Log Out</button>
-            </div>
+        <div className='footer-container' data-testid='footer'>
+            <button className='white-button' data-testid='notify-button' onClick={notifyAPI}>Notify</button>
+            <button className='secondary-button' data-testid='logout-button' onClick={logoutUser}>Log Out</button>
         </div>
     )
 }

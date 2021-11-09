@@ -14,10 +14,10 @@ export const DisplayDevices = (props) => {
         return deviceBubbles
     }
     return (
-        <div className='display-device-container'>
-            <label className='device-count-header'>{props.deviceList.length}</label>
+        <div className='display-device-container' data-testid='display-devices'>
+            <label className='device-count-header' data-testid='display-devices-count'>{props.deviceList.length}</label>
             <label className='device-count-subheader'>Devices{<br/>}Online</label>
-            <div className='device-bubbles'>
+            <div className='device-bubbles' data-testid='display-devices-bubbles'>
                 {renderDeviceBubbles()}
             </div>
         </div>
